@@ -20,7 +20,13 @@ export const AvatarDropdown: React.FC = () => {
   return (
     <div className="relative" ref={ref}>
       <button onClick={() => setOpen(v => !v)} className="flex items-center gap-2">
-        <Image src={avatar} alt="avatar" width={36} height={36} className="rounded-full" />
+        <Image 
+          src={avatar} 
+          alt="avatar" 
+          width={36} 
+          height={36} 
+          className="rounded-full" 
+        />
         <span className="hidden sm:inline">Harsh</span>
       </button>
 
