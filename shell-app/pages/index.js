@@ -5,7 +5,7 @@ import Nav from "../components/Nav"
 import Link from 'next/link'
 
 import { Catalog, ProductCard } from "@/remotes/shopComponents";
-// import { Employee } from '@/remotes/analysisComponents';
+import { Employee } from '@/remotes/analysisComponents';
 
 export default function Home() {
   return (
@@ -25,7 +25,7 @@ export default function Home() {
         Component from shop
         <Catalog />
         <ProductCard />
-        {/* <Employee /> */}
+        <Employee />
 
       </main>
 
