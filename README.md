@@ -1,0 +1,1 @@
+Microfronted with Module Federation
