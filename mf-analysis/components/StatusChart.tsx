@@ -52,7 +52,10 @@ export default function StatusChart({ users }: StatusChartProps) {
     <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
       <h2 className="text-sm font-semibold text-gray-700 mb-2">Status Distribution</h2>
       <div className="h-72">
-        <Bar data={data} options={options} />
+        <Bar 
+          data={data} 
+          options={options} 
+        />
       </div>
     </div>
   );

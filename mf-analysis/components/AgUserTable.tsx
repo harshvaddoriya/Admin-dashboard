@@ -1,11 +1,11 @@
 "use client";
 
-import { useMemo, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { AgGridReact } from "ag-grid-react";
-import type { ColDef, GridOptions } from "ag-grid-community";
 import type { User } from "../data/users";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
+import { columnDefs, defaultColDef, gridOptions } from "../utils/columns";
 
 function Skeleton() {
   return (
@@ -27,31 +27,6 @@ export default function AgUserTable({ users }: AgUserTableProps) {
     const t = setTimeout(() => setLoading(false), 400);
     return () => clearTimeout(t);
   }, [users]);
-
-  const columnDefs = useMemo<ColDef[]>(() => [
-    { headerName: "Name", field: "name", filter: "agTextColumnFilter", sortable: true, flex: 1.3, minWidth: 180 },
-    { headerName: "Email", field: "email", filter: "agTextColumnFilter", flex: 1.6, minWidth: 220 },
-    { headerName: "Role", field: "role", filter: "agSetColumnFilter", width: 130 },
-    { headerName: "Status", field: "status", filter: "agSetColumnFilter", width: 130 },
-    { headerName: "Age", field: "age", filter: "agNumberColumnFilter", width: 100, sortable: true },
-    { headerName: "Created", field: "created_at", filter: "agDateColumnFilter", width: 200 },
-  ], []);
-
-  const defaultColDef = useMemo<ColDef>(() => ({
-    resizable: true,
-    floatingFilter: true,
-    suppressMenuHide: false,
-  }), []);
-
-  const gridOptions = useMemo<GridOptions>(() => ({
-    rowBuffer: 20,
-    suppressScrollOnNewData: true,
-    animateRows: true,
-    pagination: true,
-    paginationPageSize: 10,
-    paginationPageSizeSelector: [10, 25, 50, 100],
-    domLayout: 'autoHeight',
-  }), []);
 
   return (
     <div className="bg-white border border-gray-200 rounded-lg shadow-sm">
