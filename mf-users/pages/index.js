@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import Image from 'next/image'
+// import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import dynamic from "next/dynamic"
+// import dynamic from "next/dynamic"
 import { Catalog, ProductCard } from '../components';
 
-const Nav = dynamic(() => import("main/nav"));
-const Footer = dynamic(() => import("main/footer"));
+// const Nav = dynamic(() => import("main/nav"));
+// const Footer = dynamic(() => import("main/footer"));
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Nav>This is the nav in app 2</Nav>
+      {/* <Nav>This is the nav in app 2</Nav> */}
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to the Shop app port: 3001
@@ -26,7 +26,7 @@ export default function Home() {
 
 
       </main>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
 
     </div>
   )

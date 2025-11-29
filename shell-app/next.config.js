@@ -2,9 +2,17 @@ const { NextFederationPlugin } = require('@module-federation/nextjs-mf');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    appDir: false,
+  },
   webpack: (config, options) => {
     const { isServer } = options;
-    config.experiments = { topLevelAwait: true };
+    // config.experiments = { topLevelAwait: true };
+    config.experiments = {
+      ...config.experiments,
+      topLevelAwait: true,
+      layers: true
+    };
     config.plugins.push(
       new NextFederationPlugin({
         name: 'main',
@@ -14,8 +22,7 @@ const nextConfig = {
         },
         filename: 'static/chunks/remoteEntry.js',
         exposes: {
-          './footer': './components/Footer.js',
-          './nav': './components/Nav.js'
+          // add app here to expose
         }
       })
     );
