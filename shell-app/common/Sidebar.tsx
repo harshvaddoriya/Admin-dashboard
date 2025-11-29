@@ -3,17 +3,13 @@
 import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
+import { navLinks } from "../constants/Navlinks";
+import {RxCross2} from "../icons";
 
 type Props = {
   collapsed?: boolean;
   onClose?: () => void;
 };
-
-const links = [
-  { href: "/", label: "Dashboard" },
-  { href: "/users", label: "Users" },
-  { href: "/analytics", label: "Analytics" },
-];
 
 const NavLink: React.FC<{ href: string; children: React.ReactNode }> = ({
   href,
@@ -42,19 +38,18 @@ export const Sidebar: React.FC<Props> = ({
 }) => {
   return (
     <aside
-      className={`bg-white dark:bg-gray-900 border-r dark:border-gray-800 w-64 sm:w-64 p-4 transform ${
+      className={`bg-white dark:bg-gray-900 border-r dark:border-gray-800 w-64 sm:w-64 p-3 transform transition-transform duration-300 ease-in-out ${
         collapsed ? "-translate-x-full sm:translate-x-0" : "translate-x-0"
       } transition-transform fixed sm:static inset-y-0 left-0 z-30 sm:h-screen`}>
       <div className="flex items-center justify-between mb-6">
-        <div className="text-lg font-semibold">Menu</div>
+        <div className="text-lg font-bold ml-2 mt-2">Menu</div>
         <button className="sm:hidden" onClick={onClose}>
-          ✕
+          <RxCross2 />
         </button>
       </div>
 
-      {/* Dynamic Navigation */}
       <nav className="space-y-1">
-        {links.map((l) => (
+        {navLinks.map((l) => (
           <NavLink key={l.href} href={l.href}>
             {l.label}
           </NavLink>
