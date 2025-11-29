@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-export const Employee = dynamic(
-    () => import("analysis/components").then(mod => mod.Employee),
+export const DashboardPage = dynamic(
+    () => import("analysis/dashboard"),
     { ssr: false }
-)
+);
