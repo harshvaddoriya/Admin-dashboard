@@ -16,16 +16,11 @@ const nextConfig = {
         },
         filename: 'static/chunks/remoteEntry.js',
         exposes: {
-          // "./AgUserTable": "./components/AgUserTable.tsx",
-          "./ProductCard": "./components/ProductCard.js",
-          "./catalog": "./components/Catalog.js",
-          "./components": "./components/index.ts",
-          // "./recent-activity": "./components/RecentActivity.tsx",
-          // "./useDebounce": "./hooks/useDebounce.ts",
+          "./tabledata": "./pages/tabledata.tsx",
         },
         extraOptions: {
-          exposePages: true
-        }
+          exposePages: true,
+        },
       })
     );
     return config;

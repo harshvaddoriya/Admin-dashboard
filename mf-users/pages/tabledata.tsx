@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import AgUserTable from '@components/AgUserTable';
 import { users } from 'data/users';
 
-export default function tableData() {
+export default function TableData() {
   return (
     <Layout>
         <div className='p-4'>

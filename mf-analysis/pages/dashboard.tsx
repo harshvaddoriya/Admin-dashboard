@@ -48,7 +48,7 @@ export default function Dashboard() {
   };
 
   return (
-    <main className="min-h-screen p-3 sm:p-6">
+    <main className="min-h-screen bg-white p-3 sm:p-6">
       <div className="max-w-7xl mx-auto space-y-4 sm:space-y-6">
         <header className="flex flex-col xl:flex-row xl:items-end xl:justify-between gap-3 sm:gap-4">
           <h1 className="text-2xl sm:text-3xl xl:text-4xl font-bold text-gray-900 tracking-tight">Users Analytics</h1>

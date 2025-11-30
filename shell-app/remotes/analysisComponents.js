@@ -5,6 +5,11 @@ export const DashboardPage = dynamic(
     { ssr: false }
 );
 
+export const TableDataPage = dynamic(
+    () => import("shop/tabledata"),
+    { ssr: false }
+);
+
 // const SummaryCards = dynamic(
 //     () => import("analysis/SummaryCards"),
 //     { ssr: false }
