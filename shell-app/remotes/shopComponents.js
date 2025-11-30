@@ -5,10 +5,15 @@ export const ProductCard = dynamic(
     { ssr: false }
 );
 
-export const Catalog = dynamic(
-    () => import("shop/components").then(mod => mod.Catalog),
-    { ssr: false }
-);
+// export const Catalog = dynamic(
+//     () => import("shop/components").then(mod => mod.Catalog),
+//     { ssr: false }
+// );
+
+// export const AgUserTable = dynamic(
+//     () => import("shop/components").then(mod => mod.AgUserTable),
+//     { ssr: false }
+// )
 
 // export const RecentActivity = dynamic(
 //     () => import("shop/components").then(mod => mod.RecentActivity),

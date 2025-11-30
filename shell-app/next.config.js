@@ -22,7 +22,7 @@ const nextConfig = {
         },
         filename: 'static/chunks/remoteEntry.js',
         exposes: {
-          // add app here to expose
+          // expose app
         }
       })
     );
