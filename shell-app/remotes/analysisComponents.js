@@ -5,7 +5,7 @@ export const DashboardPage = dynamic(
     { ssr: false }
 );
 
-const SummaryCards = dynamic(
-    () => import("analysis/SummaryCards"),
-    { ssr: false }
-);
+// const SummaryCards = dynamic(
+//     () => import("analysis/SummaryCards"),
+//     { ssr: false }
+// );

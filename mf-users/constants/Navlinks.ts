@@ -1,4 +1,4 @@
 export const navLinks = [
-    { href: "/", label: "Dashboard" },
+    { href: "/", label: "Home" },
     // { href: "/table-data", label: "TableData" },
   ];
