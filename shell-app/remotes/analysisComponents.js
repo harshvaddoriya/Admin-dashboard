@@ -14,3 +14,4 @@ export const TableDataPage = dynamic(
 //     () => import("analysis/SummaryCards"),
 //     { ssr: false }
 // );
+
