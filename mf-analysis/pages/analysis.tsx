@@ -21,7 +21,7 @@
         <Layout>
         <div className="p-6">
         <SummaryCards counts={counts} />
-        <p className="flex items-center gap-2 text-sm sm:text-base text-black mb-6 bg-red-300 rounded-md p-2 mt-4">
+        <p className="flex items-center gap-2 text-sm sm:text-base text-black mb-6 bg-green-200 rounded-md p-2 mt-4">
             <ImNotification className="text-red-600" />
             <span>
                 Out of <strong>{counts.total}</strong> users, <strong>{counts.active}</strong> are active,{" "}

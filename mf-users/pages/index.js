@@ -3,6 +3,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 // import dynamic from "next/dynamic"
 import { Catalog, ProductCard } from '../components';
+import RecentActivity from '@components/RecentActivity';
 
 // const Nav = dynamic(() => import("main/nav"));
 // const Footer = dynamic(() => import("main/footer"));
@@ -23,6 +24,7 @@ export default function Home() {
         </h1>
         <Catalog />
         <ProductCard />
+        <RecentActivity />
 
 
       </main>

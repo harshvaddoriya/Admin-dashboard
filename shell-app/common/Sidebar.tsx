@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
 import { navLinks } from "../constants/Navlinks";
-import {RxCross2} from "../icons";
+import { RxCross2 } from "react-icons/rx";
 
 type Props = {
   collapsed?: boolean;
@@ -40,7 +40,8 @@ export const Sidebar: React.FC<Props> = ({
     <aside
       className={`bg-white dark:bg-gray-900 border-r dark:border-gray-800 w-64 sm:w-64 p-3 transform transition-transform duration-300 ease-in-out ${
         collapsed ? "-translate-x-full sm:translate-x-0" : "translate-x-0"
-      } transition-transform fixed sm:static inset-y-0 left-0 z-30 sm:h-screen`}>
+      } fixed sm:sticky inset-y-0 left-0 z-30 sm:top-0 sm:h-screen overflow-auto`}
+      style={{ WebkitOverflowScrolling: "touch" }}>
       <div className="flex items-center justify-between mb-6">
         <div className="text-lg font-bold ml-2 mt-2">Menu</div>
         <button className="sm:hidden" onClick={onClose}>
