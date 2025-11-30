@@ -6,14 +6,22 @@ import DateRangeFilter from "../components/DateRangeFilter";
 import StatusChart from "../components/StatusChart";
 import MonthBarChart from "../components/MonthBarChart";
 import AgUserTable from "../components/AgUserTable";
+import SummaryCards from "../components/SummaryCards";
 import { useFilteredUsers } from "../hooks/useFilteredUsers";
 import { getQuickRange, formatLocal } from "../utils/dateHelpers";
-import { QUICK_RANGES } from "../constants/quickRanges";
+import { QUICK_RANGES } from "../constants/quickRangers";
 
 export default function Dashboard() {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [activeRange, setActiveRange] = useState<7 | 30 | 90 | null>(null);
+
+  const counts = {
+    total: baseUsers.length,
+    active: baseUsers.filter(u => u.status === "Active").length,
+    pending: baseUsers.filter(u => u.status === "Pending").length,
+    inactive: baseUsers.filter(u => u.status === "Inactive").length,
+  };
 
   const filtered = useFilteredUsers(baseUsers, startDate, endDate);
 
@@ -95,26 +103,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="bg-white border border-gray-200 rounded-lg p-3 sm:p-4 shadow-sm">
-          <dl className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 text-sm">
-            <div className="p-2 sm:p-3 rounded-md bg-blue-50">
-              <dt className="font-medium text-blue-700 text-xs sm:text-sm">Total</dt>
-              <dd className="text-blue-800 font-semibold text-base sm:text-lg">{filtered.length}</dd>
-            </div>
-            <div className="p-2 sm:p-3 rounded-md bg-green-50">
-              <dt className="font-medium text-green-700 text-xs sm:text-sm">Active</dt>
-              <dd className="text-green-800 font-semibold text-base sm:text-lg">{filtered.filter(u => u.status==="Active").length}</dd>
-            </div>
-            <div className="p-2 sm:p-3 rounded-md bg-yellow-50">
-              <dt className="font-medium text-yellow-700 text-xs sm:text-sm">Pending</dt>
-              <dd className="text-yellow-800 font-semibold text-base sm:text-lg">{filtered.filter(u => u.status==="Pending").length}</dd>
-            </div>
-            <div className="p-2 sm:p-3 rounded-md bg-gray-50">
-              <dt className="font-medium text-gray-700 text-xs sm:text-sm">Inactive</dt>
-              <dd className="text-gray-800 font-semibold text-base sm:text-lg">{filtered.filter(u => u.status==="Inactive").length}</dd>
-            </div>
-          </dl>
-        </div>
+        <SummaryCards counts={counts} />
 
         <AgUserTable users={filtered} />
       </div>

@@ -4,3 +4,4 @@ export { default as DateRangeFilter } from "./DateRangeFilter";
 export { default as MonthBarChart } from "./MonthBarChart";
 export { default as StatusChart } from "./StatusChart";
 export { default as UserTable } from "./UserTable";
+export { default as SummaryCards } from "./SummaryCards";
