@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useTheme } from "../hooks/useTheme";
-import { FiMoon, FiSun } from "../icons";
+import { FiMoon, FiSun } from "react-icons/fi";
 
 export const ThemeToggle: React.FC = () => {
   const { theme, toggle } = useTheme();

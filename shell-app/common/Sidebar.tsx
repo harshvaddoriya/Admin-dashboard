@@ -42,8 +42,8 @@ export const Sidebar: React.FC<Props> = ({
         collapsed ? "-translate-x-full sm:translate-x-0" : "translate-x-0"
       } fixed sm:sticky inset-y-0 left-0 z-30 sm:top-0 sm:h-screen overflow-auto`}
       style={{ WebkitOverflowScrolling: "touch" }}>
-      <div className="flex items-center justify-between mb-6">
-        <div className="text-lg font-bold ml-2 mt-2">Menu</div>
+      <div className="flex items-center justify-between mb-3 border-b-2 pb-3">
+        <div className="text-lg font-semibold ml-4 mt-2">Menu</div>
         <button className="sm:hidden" onClick={onClose}>
           <RxCross2 />
         </button>

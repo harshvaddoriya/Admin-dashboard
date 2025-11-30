@@ -18,7 +18,7 @@ const nextConfig = {
         exposes: {
           "./catalog": "./components/Catalog.js",
           "./components": "./components/index.ts",
-          "./recent-activity": "./components/RecentActivity.tsx",
+
         },
         extraOptions: {
           exposePages: true

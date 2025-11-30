@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+.ag-theme-quartz .ag-cell {
+  color: #111827 !important;
+}
+
+.ag-theme-quartz .ag-row {
+  min-height: 40px !important;
+  background: transparent !important;
+}
+
+.ag-theme-quartz .ag-center-cols-container .ag-row {
+  background-color: #ffffff !important;
+}
+
+.ag-theme-quartz .ag-root-wrapper, .ag-theme-quartz .ag-body-viewport {
+  color: #111827 !important;
+}
+}
+
+.ag-theme-quartz .ag-center-cols-container .ag-row {
+  background-color: #ffffff !important;
+}
+
+.ag-theme-quartz .ag-root-wrapper, .ag-theme-quartz .ag-body-viewport {
+  color: #111827 !important;
+}
+
 html,
 body {
   padding: 0;
@@ -27,4 +53,29 @@ a {
     color: white;
     background: black;
   }
+}
+
+/* Custom ag-Grid theme customizations */
+.ag-theme-quartz {
+  --ag-grid-size: 4px;
+  --ag-list-item-height: 28px;
+  --ag-header-height: 32px;
+  --ag-row-hover-color: #f0f0f0;
+  --ag-selected-row-background-color: #e8f4f8;
+}
+
+/* Smooth animations */
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
 }
