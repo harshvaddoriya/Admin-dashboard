@@ -23,9 +23,9 @@ export default function SummaryCards({ counts }: SummaryCardsProps) {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
       {cards.map((card) => (
-        <div key={card.label} className={`p-4 rounded-lg shadow-sm ${card.color}`}>
-          <dt className="text-xs sm:text-sm font-medium">{card.label}</dt>
-          <dd className="text-lg sm:text-xl font-semibold">{card.value}</dd>
+        <div key={card.label} className={`p-4 rounded-lg h-[90px] shadow-sm ${card.color}`}>
+          <dt className="text-sm sm:text-md font-medium">{card.label}</dt>
+          <dd className="text-2xl sm:text-3xl font-semibold">{card.value}</dd>
         </div>
       ))}
     </div>

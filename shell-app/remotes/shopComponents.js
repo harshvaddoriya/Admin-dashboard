@@ -10,7 +10,7 @@ export const Catalog = dynamic(
     { ssr: false }
 );
 
-export const RecentActivity = dynamic(
-    () => import("shop/components").then(mod => mod.RecentActivity),
-    { ssr: false }
-);
+// export const RecentActivity = dynamic(
+//     () => import("shop/components").then(mod => mod.RecentActivity),
+//     { ssr: false }
+// );
