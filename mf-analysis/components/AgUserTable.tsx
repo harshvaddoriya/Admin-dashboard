@@ -34,8 +34,8 @@ export default function AgUserTable({ users }: AgUserTableProps) {
         {loading ? (
           <Skeleton />
         ) : (
-          <AgGridReact<User>
-            rowData={users}
+          <AgGridReact
+            rowData={users as User[]}
             columnDefs={columnDefs}
             defaultColDef={defaultColDef}
             gridOptions={gridOptions}

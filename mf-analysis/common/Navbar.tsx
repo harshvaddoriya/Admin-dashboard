@@ -3,7 +3,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
-import { FiAlignJustify } from "react-icons/fi";
+
 import { navLinks } from "../constants/Navlinks";
 
 export const Navbar: React.FC<{ onToggleSidebar?: () => void }> = ({
@@ -41,7 +41,7 @@ export const Navbar: React.FC<{ onToggleSidebar?: () => void }> = ({
         className="block md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-all"
         aria-label="Toggle menu"
       >
-        <FiAlignJustify />
+        ☰
       </button>
 
       {mobileMenuOpen && (
