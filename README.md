@@ -51,3 +51,44 @@ Folder: shell-app
 Port: 3000\*\*\*
 
 ---
+
+\*\*\*MicroFront App (Sub)
+
+Folder: mf-analysis
+
+Port: 3002\*\*\*
+
+---
+
+\*\*\*MicroFront App (Sub)
+
+Folder: mf-users
+
+Port: 3001\*\*\*
+
+---
+
+### 3️⃣ Run All Apps Together (Micro-Frontend Mode)
+
+Start apps in this order:
+
+1️⃣ **Start Users Remote**
+
+````bash
+cd mf-users
+npm run dev
+
+2️⃣ **Start Analysis Remote**
+
+```bash
+cd mf-analysis
+npm run dev
+
+3️⃣ **Start Host App**
+
+```bash
+cd shell-app
+npm run dev
+
+---
+````
