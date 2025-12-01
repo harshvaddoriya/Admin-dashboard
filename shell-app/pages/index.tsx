@@ -1,17 +1,24 @@
 import React from "react";
 import { Layout } from "../components/Layout";
-//import { ProductCard } from "remotes/shopComponents";
+import StatusChart from "@components/StatusChart";
+import { users as baseUsers } from "../data/users";
+import SummaryCards  from "@components/SummaryCards";
 
 export default function Dashboard() {
+  const users = baseUsers;
+  const counts = {
+    total: baseUsers.length,
+    active: baseUsers.filter(u => u.status === "Active").length,
+    pending: baseUsers.filter(u => u.status === "Pending").length,
+    inactive: baseUsers.filter(u => u.status === "Inactive").length,
+  };
+
   return (
     <Layout>
-      <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="p-4 bg-white dark:bg-gray-800 rounded shadow">Card 1</div>
-        <div className="p-4 bg-white dark:bg-gray-800 rounded shadow">Card 2</div>
-        <div className="p-4 bg-white dark:bg-gray-800 rounded shadow">Card 3</div>
-        {/* <ProductCard /> */}
-      </div>
+      <h1 className="text-2xl font-bold mb-4">Admin Dashboard</h1>
+       <SummaryCards counts={counts} />
+      <h1 className="text-2xl font-semibold py-4">User Status Chart : </h1>
+        <StatusChart  users={users}/>
     </Layout>
   );
 }

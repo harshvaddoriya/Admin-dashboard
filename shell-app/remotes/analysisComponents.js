@@ -5,13 +5,18 @@ export const DashboardPage = dynamic(
     { ssr: false }
 );
 
+export const StatusChart = dynamic(
+    () => import("analysis/components").then(mod => mod.StatusChart),
+    { ssr: false }
+);
+
+export const SummaryCards = dynamic(
+    () => import("analysis/components").then(mod => mod.SummaryCards),
+    { ssr: false }
+)
+
 export const TableDataPage = dynamic(
     () => import("shop/tabledata"),
     { ssr: false }
 );
-
-// const SummaryCards = dynamic(
-//     () => import("analysis/SummaryCards"),
-//     { ssr: false }
-// );
 
