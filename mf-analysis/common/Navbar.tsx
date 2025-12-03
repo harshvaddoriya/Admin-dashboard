@@ -2,14 +2,16 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";   
 
 import { navLinks } from "../constants/Navlinks";
 
 export const Navbar: React.FC<{ onToggleSidebar?: () => void }> = ({
   onToggleSidebar,
 }) => {
-  const pathname = usePathname();
+  const router = useRouter();
+  const pathname = router.pathname;        
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const isActive = (href: string) => pathname === href;
@@ -18,9 +20,10 @@ export const Navbar: React.FC<{ onToggleSidebar?: () => void }> = ({
     <header className="flex items-center justify-between px-6 py-4 h-14 sm:h-16 border-b bg-white dark:bg-gray-900 dark:border-gray-800 sticky top-0 z-50 shadow-sm">
       <div className="flex items-center">
         <span className="text-xl sm:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Analysis App
+          Analysis App
         </span>
       </div>
+
       <nav className="hidden md:flex items-center gap-8 text-base font-medium">
         {navLinks.map((link) => (
           <Link
@@ -36,6 +39,7 @@ export const Navbar: React.FC<{ onToggleSidebar?: () => void }> = ({
           </Link>
         ))}
       </nav>
+
       <button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         className="block md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-all"
