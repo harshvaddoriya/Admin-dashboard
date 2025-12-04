@@ -20,3 +20,7 @@ export const TableDataPage = dynamic(
     { ssr: false }
 );
 
+export const RemoteUsers = dynamic(
+    () => import("analysis/data"),
+    { ssr: false }
+);

@@ -2,8 +2,8 @@ export interface User {
   id: number;
   name: string;
   email: string;
-  role: "Admin" | "User" | "Manager";
-  status: "Active" | "Inactive" | "Pending";
+  role: "Admin" | "User" | "Manager" | string;
+  status: "Active" | "Inactive" | "Pending" | string;
   age: number;
   created_at: string; // ISO date (YYYY-MM-DD)
 }

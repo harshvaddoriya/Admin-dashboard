@@ -12,7 +12,7 @@ export const columnDefs: ColDef[] = [
 export const defaultColDef: ColDef = {
   resizable: true,
   floatingFilter: true,
-  suppressMenuHide: false,
+  suppressMenu: false,
 };
 
 export const gridOptions: GridOptions = {

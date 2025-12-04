@@ -9,10 +9,14 @@ import {
   Title,
   Tooltip,
   Legend,
+  ChartOptions,
 } from "chart.js";
-import type { User } from "../data/users";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+
+interface User {
+  status: string;
+}
 
 interface StatusChartProps {
   users: User[];
@@ -37,25 +41,23 @@ export default function StatusChart({ users }: StatusChartProps) {
     ],
   };
 
-  const options = {
+  const options: ChartOptions<"bar"> = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
-      legend: { position: "bottom" as const },
+      legend: { position: "bottom" as const }, 
       title: { display: false },
     },
     scales: {
       y: { beginAtZero: true, ticks: { precision: 0 } },
     },
   };
+
   return (
     <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
       <h2 className="text-sm font-semibold text-gray-700 mb-2">Status Distribution</h2>
       <div className="h-72">
-        <Bar 
-          data={data} 
-          options={options} 
-        />
+        <Bar data={data} options={options} />
       </div>
     </div>
   );

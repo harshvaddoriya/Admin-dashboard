@@ -4,7 +4,7 @@ import type { ColDef, GridOptions } from "ag-grid-community";
 import type { User } from "../data/users";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
-import { Skeleton } from "./Skeleton";
+import Skeleton  from "./Skeleton";
 import { useDebounce } from "../hooks/useDebounce";
 import { columnDefs } from "config/columnDefs";
 import { defaultColDef } from "config/defaultColDefs";

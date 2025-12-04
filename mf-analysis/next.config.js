@@ -12,7 +12,8 @@ const nextConfig = {
       new NextFederationPlugin({
         name: 'analysis',
         remotes: {
-          main: `main@http://localhost:3000/_next/static/${isServer ? 'ssr' : 'chunks'}/remoteEntry.js`,
+          //main: `main@http://localhost:3000/_next/static/${isServer ? 'ssr' : 'chunks'}/remoteEntry.js`,
+          main: `main@https://admin-dashboard-3vo8.vercel.app/_next/static/${isServer ? 'ssr' : 'chunks'}/remoteEntry.js`,
         },
         filename: 'static/chunks/remoteEntry.js',
         exposes: {
@@ -23,6 +24,7 @@ const nextConfig = {
           // "./hooks": "./hooks/index.ts",
           "./useCountUp": "./hooks/useCountUp.ts",
           "./analysis": "./pages/analysis.tsx",
+          "./data": "./data/users.ts"
         },
         extraOptions: {
           exposePages: true

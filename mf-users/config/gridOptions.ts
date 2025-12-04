@@ -8,5 +8,5 @@ export const gridOptions: GridOptions = {
   paginationPageSize: 10,
   paginationPageSizeSelector: [10, 25, 50, 100],
   domLayout: "autoHeight",
-  virtualizationPageSize: 50,
+  // ...( { virtualizationPageSize: 50 } as any ),
 };
