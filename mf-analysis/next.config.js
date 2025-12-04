@@ -17,6 +17,7 @@ const nextConfig = {
         },
         filename: 'static/chunks/remoteEntry.js',
         exposes: {
+          "./data": "./data/users.ts",
           "./StatusChart": "./components/StatusChart.tsx",
           "./SummaryCards": "./components/SummaryCards.tsx",
           "./components": "./components/index.tsx",
@@ -24,10 +25,9 @@ const nextConfig = {
           // "./hooks": "./hooks/index.ts",
           "./useCountUp": "./hooks/useCountUp.ts",
           "./analysis": "./pages/analysis.tsx",
-          "./data": "./data/users.ts"
         },
         extraOptions: {
-          exposePages: true
+          exposePages: false,
         }
       })
     );
