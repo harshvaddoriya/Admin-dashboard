@@ -1,4 +1,12 @@
 "use client";
+
+import { useAtom, useSetAtom } from "jotai";
+import {
+  usersAtom,
+  searchTextAtom,
+  selectedRolesAtom,
+  selectedStatusesAtom,
+} from "@store/userAtoms";
 import { useMemo, useState, useEffect, useRef, useCallback } from "react";
 import { AgGridReact } from "ag-grid-react";
 import type { GridOptions } from "ag-grid-community";
@@ -19,14 +27,17 @@ import UserViewModal from "./UserViewModal";
 interface AgUserTableProps { users: User[] }
 
 export default function AgUserTable({ users: initialUsers }: AgUserTableProps) {
-  const [users, setUsers] = useState<User[]>(initialUsers);
-  const [searchText, setSearchText] = useState("");
-  const [selectedRoles, setSelectedRoles] = useState<string[]>([]);
-  const [selectedStatuses, setSelectedStatuses] = useState<string[]>([]);
-  const [viewUser, setViewUser] = useState<User | null>(null);
-  const [editingUser, setEditingUser] = useState<User | null>(null);
+  const [users, setUsers] = useAtom(usersAtom);
+  const [searchText, setSearchText] = useAtom(searchTextAtom);
+  const [selectedRoles, setSelectedRoles] = useAtom(selectedRolesAtom);
+  const [selectedStatuses, setSelectedStatuses] = useAtom(selectedStatusesAtom);
+
   const gridRef = useRef<AgGridReact<User>>(null);
   const [loading, setLoading] = useState(true);
+
+  const [viewUser, setViewUser] = useState<User | null>(null);
+  const [editingUser, setEditingUser] = useState<User | null>(null);
+
 
   const debouncedSearchText = useDebounce(searchText, 300);
 
@@ -62,9 +73,8 @@ export default function AgUserTable({ users: initialUsers }: AgUserTableProps) {
     gridRef.current?.api?.setFilterModel(null);
   }, []);
 
-  const handleViewUser = (user: User) => {
-    setViewUser(user);
-  };
+  const handleViewUser = (user: User) => setViewUser(user);
+
 
   const handleSubmitUser = (user: User) => {
     if (editingUser) setUsers(prev => prev.map(u => (u.id === editingUser.id ? user : u)));

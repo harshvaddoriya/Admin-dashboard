@@ -20,18 +20,12 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@components/*": [
-        "components/*"
-      ],
-      "@pages/*": [
-        "pages/*"
-      ],
-      "@hooks/*": [
-        "hooks/*"
-      ],
-      "@common/*": [
-        "common/*"
-      ]
+      "@components/*": ["components/*"],
+      "@pages/*": ["pages/*"],
+      "@hooks/*": ["hooks/*"],
+      "@common/*": ["common/*"],
+      "@cofig/*": ["config/*"],
+      "@store/*": ["store/*"]
     }
   },
   "include": [

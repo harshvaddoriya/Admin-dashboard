@@ -12,7 +12,7 @@ export const columnDefs: ColDef<User>[] = [
 
   {
     headerName: "Actions",
-    width: 140,
+    width: 180,
     cellRenderer: (params: ICellRendererParams<User>) => (
       <UserActions
         user={params.data!}
