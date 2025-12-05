@@ -1,18 +1,10 @@
-"use client";
-
-import React, { useEffect } from "react";
-import AgUserTable from "../components/AgUserTable";
+import React from "react";
+import dynamic from "next/dynamic";
 import { users } from "../data/users";
-import { useSetAtom } from "jotai";
-import { usersAtom } from "@store/userAtoms";
+
+const AgUserTable = dynamic(() => import("../components/AgUserTable"), { ssr: false });
 
 export default function TableData() {
-  const setUsers = useSetAtom(usersAtom);
-
-  useEffect(() => {
-    setUsers(users);
-  }, [setUsers]);
-
   return (
          <div className='p-2'>
             <h1 className='font-semibold text-2xl'>Users Data : </h1>

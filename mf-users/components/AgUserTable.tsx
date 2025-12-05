@@ -1,5 +1,3 @@
-"use client";
-
 import { useAtom, useSetAtom } from "jotai";
 import {
   usersAtom,
@@ -37,6 +35,10 @@ export default function AgUserTable({ users: initialUsers }: AgUserTableProps) {
 
   const [viewUser, setViewUser] = useState<User | null>(null);
   const [editingUser, setEditingUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    setUsers(initialUsers);
+  }, [initialUsers, setUsers]);
 
 
   const debouncedSearchText = useDebounce(searchText, 300);

@@ -1,8 +1,9 @@
 import { useEffect } from "react";
-import { useLocalStorage } from "./useLocalStorage";
+import { useAtom } from "jotai";
+import { themeAtom } from "../store/appAtoms";
 
 export function useTheme() {
-  const [theme, setTheme] = useLocalStorage<'light'|'dark'>("theme", "light");
+  const [theme, setTheme] = useAtom(themeAtom);
 
   useEffect(() => {
     const root = window.document.documentElement;

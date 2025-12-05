@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import type { User } from "../data/users";
 import { useUserForm } from "./UseUserForm";

@@ -1,11 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
+import { useAtom } from "jotai";
 import { Header } from "../common/Header";
 import { Sidebar } from "../common/Sidebar";
+import { sidebarOpenAtom } from "../store/appAtoms";
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useAtom(sidebarOpenAtom);
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex">

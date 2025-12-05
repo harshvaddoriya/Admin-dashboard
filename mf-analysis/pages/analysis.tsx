@@ -1,14 +1,22 @@
     "use client";
 
+    import { useEffect } from "react";
+    import { useAtom } from "jotai";
     import Layout from "../components/Layout";
     import StatusChart from "../components/StatusChart";
     import MonthBarChart from "../components/MonthBarChart";
     import { users as baseUsers } from "../data/users";
     import { ImNotification } from "react-icons/im";
     import SummaryCards from "../components/SummaryCards";
+    import { usersAtom, filteredUsersByStatusAtom } from "../store/analysisAtoms";
 
     export default function Analysis() {
-    const users = baseUsers;
+    const [users, setUsers] = useAtom(usersAtom);
+    const [filteredUsers] = useAtom(filteredUsersByStatusAtom);
+
+    useEffect(() => {
+        setUsers(baseUsers);
+    }, [setUsers]);
 
     const counts = {
         total: users.length,
@@ -31,10 +39,10 @@
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
             <div className="md:col-span-3">
-            <MonthBarChart users={users} />
+            <MonthBarChart users={filteredUsers} />
             </div>
             <div className="md:col-span-2">
-            <StatusChart users={users} />
+            <StatusChart users={filteredUsers} />
             </div>
         </div>
         </div>

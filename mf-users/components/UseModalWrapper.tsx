@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from "react";
 import { User } from "../data/users";
 import { UserFormModal } from "./UserFormModel";

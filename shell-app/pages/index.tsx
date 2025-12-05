@@ -1,18 +1,20 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useAtom } from "jotai";
 import { Layout } from "../components/Layout";
-import StatusChart from "@components/StatusChart";
+import StatusChart from "@components/StatusChart"
 import SummaryCards from "@components/SummaryCards";
+import { remoteUsersAtom } from "../store/appAtoms";
 
 export default function Dashboard() {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useAtom(remoteUsersAtom);
 
   useEffect(() => {
     import("analysis/data").then((mod) => {
       setUsers(mod.users);
     });
-  }, []);
+  }, [setUsers]);
 
   if (users.length === 0) return <p>Loading remote users...</p>;
 

@@ -12,8 +12,8 @@ const nextConfig = {
       new NextFederationPlugin({
         name: 'shop',
         remotes: {
-          //main: `main@http://localhost:3000/_next/static/${isServer ? 'ssr' : 'chunks'}/remoteEntry.js`,
-          main: `main@https://admin-dashboard-3vo8.vercel.app/_next/static/${isServer ? 'ssr' : 'chunks'}/remoteEntry.js`,
+          main: `main@http://localhost:3000/_next/static/${isServer ? 'ssr' : 'chunks'}/remoteEntry.js`,
+          // main: `main@https://admin-dashboard-3vo8.vercel.app/_next/static/${isServer ? 'ssr' : 'chunks'}/remoteEntry.js`,
           // analysis: `analysis@http://localhost:3002/_next/static/${isServer ? 'ssr' : 'chunks'}/remoteEntry.js`,
         },
         filename: 'static/chunks/remoteEntry.js',
