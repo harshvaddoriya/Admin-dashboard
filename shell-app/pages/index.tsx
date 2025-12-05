@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Layout } from "../components/Layout";
-import {StatusChart} from "../remotes/analysisComponents"
+import StatusChart from "@components/StatusChart";
 import SummaryCards from "@components/SummaryCards";
 
 export default function Dashboard() {
