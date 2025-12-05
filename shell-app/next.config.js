@@ -17,12 +17,13 @@ const nextConfig = {
       new NextFederationPlugin({
         name: 'main',
         remotes: {
-          // shop: `shop@http://localhost:3001/_next/static/${isServer ? 'ssr' : 'chunks'}/remoteEntry.js`,
-          // analysis: `analysis@http://localhost:3002/_next/static/${isServer ? 'ssr' : 'chunks'}/remoteEntry.js`,
+          shop: `shop@http://localhost:3001/_next/static/${isServer ? 'ssr' : 'chunks'}/remoteEntry.js`,
+          analysis: `analysis@http://localhost:3002/_next/static/${isServer ? 'ssr' : 'chunks'}/remoteEntry.js`,
 
-          shop: `shop@https://admin-dashboard-cs8i.vercel.app/_next/static/${isServer ? 'ssr' : 'chunks'}/remoteEntry.js`,
-          analysis: `analysis@https://admin-dashboard-three-delta-76.vercel.app/_next/static/chunks/remoteEntry.js`,
-        },
+        //   shop: `shop@https://admin-dashboard-cs8i.vercel.app/_next/static/${isServer ? 'ssr' : 'chunks'}/remoteEntry.js`,
+        //   analysis: `analysis@https://admin-dashboard-three-delta-76.vercel.app/_next/static/chunks/remoteEntry.js`,
+        
+         },
         filename: 'static/chunks/remoteEntry.js',
         exposes: {
           // expose app

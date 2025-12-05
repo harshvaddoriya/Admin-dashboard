@@ -6,8 +6,8 @@ export const DashboardPage = dynamic(
 );
 
 export const StatusChart = dynamic(
-    () => import("analysis/components").then(mod => mod.StatusChart),
-    { ssr: false }
+  () => import("analysis/StatusChart"),
+  { ssr: false }
 );
 
 export const SummaryCards = dynamic(
